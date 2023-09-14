@@ -2,22 +2,13 @@
 
 const endpoint = "http://localhost:3000";
 
+import { updateArtistsGrid } from "./rest.js";
+
 window.addEventListener("load", initApp);
 
 async function initApp() {
   console.log("JS kører");
   await updateArtistsGrid();
-}
-
-async function readArtists() {
-  const response = await fetch(`${endpoint}/artists`);
-  const data = response.json();
-  return data;
-}
-
-async function updateArtistsGrid() {
-  const artists = await readArtists();
-  showArtists(artists);
 }
 
 function showArtists(artists) {
@@ -35,3 +26,5 @@ function showArtists(artists) {
     document.querySelector("#artists").insertAdjacentHTML("beforeend", html);
   }
 }
+
+export { showArtists };
