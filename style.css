@@ -14,11 +14,8 @@ header {
   background: linear-gradient(to bottom, #686867, #262921);
   padding: 2em;
   display: flex;
-  grid-template-columns: 1fr;
-  gap: 1em;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  word-spacing: 1.5em;
   letter-spacing: 1px;
 }
 
@@ -61,4 +58,19 @@ header {
 
 .grid-item-artist img:hover {
   box-shadow: 0 8px 32px 2px;
+}
+
+/* SEARCH STYLING */
+.search-grid {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+#searchbar {
+  margin: 0em auto;
+  width: 100%;
+  max-width: 350px;
+  padding: 0.5em;
+  border: 2px solid black;
 }

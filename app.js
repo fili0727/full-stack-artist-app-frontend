@@ -1,7 +1,5 @@
 "use strict";
 
-const endpoint = "http://localhost:3000";
-
 import { updateArtistsGrid } from "./rest.js";
 
 window.addEventListener("load", initApp);
