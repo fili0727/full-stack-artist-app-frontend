@@ -26,6 +26,19 @@ function showArtists(artists) {
   }
 }
 
-function showAlbums() {}
+function showAlbums(albums) {
+  document.querySelector("#albums").innerHTML = "";
+  for (const album of albums) {
+    const html =
+      /*html*/
+      `
+      <article class="grid-item-artist">
+      <h2>${album.title}</h2>
+      <p>${album.release_date}</p>
+      </article>
+    `;
+    document.querySelector("#albums").insertAdjacentHTML("beforeend", html);
+  }
+}
 
-export { showArtists };
+export { showArtists, showAlbums };
