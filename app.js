@@ -16,13 +16,16 @@ function showArtists(artists) {
       /*html*/
       `
       <article class="grid-item-artist">
-      <img src="${artist.image}">
-      <p>${artist.name}</p>
-      <p>${artist.career_start}</p>
+      <h2>${artist.name}</h2>
+      <p>Career start: ${artist.career_start}</p>
+    
+  
       </article>
     `;
     document.querySelector("#artists").insertAdjacentHTML("beforeend", html);
   }
 }
+
+function showAlbums() {}
 
 export { showArtists };
