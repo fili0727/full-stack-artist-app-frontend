@@ -41,4 +41,19 @@ function showAlbums(albums) {
   }
 }
 
-export { showArtists, showAlbums };
+function showTracks(tracks) {
+  document.querySelector("#tracks").innerHTML = "";
+  for (const track of tracks) {
+    const html =
+      /*html*/
+      `
+      <article class="grid-item-artist">
+      <h2>${track.title}</h2>
+      <p>${track.duration}</p>
+      </article>
+    `;
+    document.querySelector("#tracks").insertAdjacentHTML("beforeend", html);
+  }
+}
+
+export { showArtists, showAlbums, showTracks };
