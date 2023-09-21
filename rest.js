@@ -22,7 +22,7 @@ async function readTracks() {
   return data;
 }
 
-async function updateArtistsGrid() {
+async function updateGrids() {
   const artists = await readArtists();
   showArtists(artists);
   const albums = await readAlbums();
@@ -31,4 +31,4 @@ async function updateArtistsGrid() {
   showTracks(tracks);
 }
 
-export { updateArtistsGrid };
+export { updateGrids };

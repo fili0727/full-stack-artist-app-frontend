@@ -19,7 +19,9 @@ header {
   letter-spacing: 1px;
 }
 
-/* GRID STYLING */
+h2 {
+  text-align: center;
+}
 
 /* GRID STYLING */
 
@@ -57,7 +59,7 @@ header {
   padding: 1em;
 }
 
-#searchbar {
+#searchBar {
   margin: 0em auto;
   width: 100%;
   max-width: 350px;

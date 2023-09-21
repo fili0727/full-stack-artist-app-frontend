@@ -8,21 +8,33 @@
   </head>
   <body>
     <header>Music Database</header>
+    <label for="select-filter-by" class="search-grid">
+      Select:
+      <select id="select-filter-by">
+        <option value="Artists">Artists</option>
+        <option value="Albums">Albums</option>
+        <option value="Tracks">Tracks</option>
+      </select>
+    </label>
     <div class="search-grid">
       <div>
         <label for="searchbar"></label>
-        <input type="search" id="searchbar" placeholder="Search for ..." />
+        <input type="search" id="searchBar" placeholder="Search for ..." />
       </div>
     </div>
+
     <div>
+      <h2>Artists</h2>
       <section id="artists" class="grid-container"></section>
     </div>
 
     <div>
+      <h2>Albums</h2>
       <section id="albums" class="grid-container"></section>
     </div>
 
     <div>
+      <h2>Tracks</h2>
       <section id="tracks" class="grid-container"></section>
     </div>
   </body>
