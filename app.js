@@ -6,6 +6,12 @@ window.addEventListener("load", initApp);
 
 async function initApp() {
   console.log("JS kører");
+  const searchInput = document.querySelector("#searchbar");
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value;
+    searchBackend(query);
+  });
+
   await updateArtistsGrid();
 }
 
@@ -53,6 +59,5 @@ function showTracks(tracks) {
     document.querySelector("#tracks").insertAdjacentHTML("beforeend", html);
   }
 }
-
 
 export { showArtists, showAlbums, showTracks };
