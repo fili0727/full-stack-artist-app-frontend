@@ -1,11 +1,18 @@
 "use strict";
 
-import { updateArtistsGrid } from "./rest.js";
+import { updateArtistsGrid, searchBackend } from "./rest.js";
 
 window.addEventListener("load", initApp);
 
 async function initApp() {
   console.log("JS kører");
+
+  const searchInput = document.querySelector("#searchbar");
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value;
+    searchBackend(query);
+  });
+
   await updateArtistsGrid();
 }
 

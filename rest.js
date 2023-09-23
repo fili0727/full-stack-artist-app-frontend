@@ -31,4 +31,36 @@ async function updateArtistsGrid() {
   showTracks(tracks);
 }
 
-export { updateArtistsGrid };
+async function searchBackend(query) {
+  const response = await fetch(`${endpoint}/fullAlbums/search?q=${query}`);
+  const searchData = await response.json();
+  updateSearchResults(searchData);
+}
+
+function updateSearchResults(searchResults) {
+  if (searchResults && Array.isArray(searchResults)) {
+    const filteredArtists = [];
+    const filteredAlbums = [];
+    const filteredTracks = [];
+
+    for (const result of searchResults) {
+      if (result.name !== null && result.career_start !== null) {
+        filteredArtists.push(result);
+      }
+      if (result.title !== null && result.release_date !== null) {
+        filteredAlbums.push(result);
+      }
+      if (result.title !== null && result.duration !== null) {
+        filteredTracks.push(result);
+      }
+    }
+
+    showArtists(filteredArtists);
+    showAlbums(filteredAlbums);
+    showTracks(filteredTracks);
+  } else {
+    console.log("Invalid search results data");
+  }
+}
+
+export { updateArtistsGrid, searchBackend };
