@@ -2,7 +2,7 @@
 
 import { showArtists, showAlbums, showTracks } from "./app.js";
 
-const endpoint = "http://localhost:3000";
+const endpoint = "https://mabi-testdata-01.azurewebsites.net/";
 
 async function readArtists() {
   const response = await fetch(`${endpoint}/artists`);
